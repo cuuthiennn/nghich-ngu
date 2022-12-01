@@ -26,7 +26,7 @@ public class main {
 		list.add(new sinhvien(8,"Chi Thanh", 6.0));
 		list.add(new sinhvien(9,"Minh Thu", 6.7));
 		XuatTrenTB();
-		//printSortByNameAndMSV(list);
+		printSortByNameAndMSV(list);
 		updateDiem();
 		long t2 = System.currentTimeMillis();
 		System.out.println("thoi gian chay: "+ (t2 - t1) + "mls");
