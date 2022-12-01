@@ -25,8 +25,7 @@ public class main {
 		list.add(new sinhvien(7,"Thien", 1.0));
 		list.add(new sinhvien(8,"Chi Thanh", 6.0));
 		list.add(new sinhvien(9,"Minh Thu", 6.7));
-		List<sinhvien> trenTB = danhSachTrenTB(list);
-		XuatDanhSach(trenTB);
+		XuatDanhSach(danhSachTrenTB(list));
 		printSortByNameAndMSV(list);
 		updateDiem();
 		long t2 = System.currentTimeMillis();
