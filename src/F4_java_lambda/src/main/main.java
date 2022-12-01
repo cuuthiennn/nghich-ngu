@@ -25,22 +25,25 @@ public class main {
 		list.add(new sinhvien(7,"Thien", 1.0));
 		list.add(new sinhvien(8,"Chi Thanh", 6.0));
 		list.add(new sinhvien(9,"Minh Thu", 6.7));
-		XuatTrenTB();
+		List<sinhvien> trenTB = danhSachTrenTB(list);
+		XuatDanhSach(trenTB);
 		printSortByNameAndMSV(list);
 		updateDiem();
 		long t2 = System.currentTimeMillis();
 		System.out.println("thoi gian chay: "+ (t2 - t1) + "mls");
 	}
 //	1/ Viết hàm trả về một danh sách các bạn sinh viên có điểm trên trung bình.
-	public static void XuatTrenTB() {
+	public static List<sinhvien>  danhSachTrenTB(List<sinhvien> list) {
+		List<sinhvien> tempSV = new ArrayList<>();
 		for(sinhvien x : list) {
 			if(x.getDiemthi() > 5) {
-				System.out.println(x.toString()); 
+				tempSV.add(x);
 			}
 		}
+		return tempSV;
 	}
 //	2/ Viết hàm in ra danh sách ở bài 1.
-	public static void XuatDanhSach() {
+	public static void XuatDanhSach(List<sinhvien> list) {
 		for(sinhvien x : list) {
 				System.out.println(x.toString()); 
 		}
@@ -63,11 +66,11 @@ public class main {
 	
 	public static void printSortByName(List<sinhvien> list) {
 		Collections.sort(list, sortByName);
-		XuatDanhSach();
+		XuatDanhSach(list);
 	}
 	public static void printSortByMSV(List<sinhvien> list) {
 		Collections.sort(list, sortByMSV);
-		XuatDanhSach();
+		XuatDanhSach(list);
 	}
 //	[Sau khi viết Xong, comment code lại và gộp 2 hàm này thành 1 hàm duy nhất].
 	public static void printSortByNameAndMSV(List<sinhvien> list) {
@@ -80,10 +83,10 @@ public class main {
 			n = scan.nextInt();
 			switch(n) {
 				case 1: Collections.sort(list, sortByName);
-						XuatDanhSach();
+						XuatDanhSach(list);
 						break;
 				case 2: Collections.sort(list, sortByMSV);
-						XuatDanhSach();
+						XuatDanhSach(list);
 						break;
 				case 3: return;
 				default: break;
@@ -101,11 +104,6 @@ public class main {
 				System.out.println(x.toString());
 			}
 		}
-	}
-	public static void test() {
-		List<Integer> list = Arrays.asList(2, 1, 3, 7, 8, 4, 5);
-		double a = list.stream().filter(i -> i % 2 == 0).peek(System.out::println).map(n -> Math.sqrt(n)).mapToDouble(d -> d).average().getAsDouble();
-		System.out.println(a);
 	}
 	
 }
