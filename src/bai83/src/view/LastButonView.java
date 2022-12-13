@@ -51,7 +51,7 @@ public class LastButonView extends JFrame{
 		jButton_4.addActionListener(ac);
 		
 		
-		jPanel_Center.add(jButton_1);
+		jPanel_Center.add(jButton_do);
 		jPanel_Center.add(jButton_2);
 		jPanel_Center.add(jButton_3);
 		jPanel_Center.add(jButton_4);
