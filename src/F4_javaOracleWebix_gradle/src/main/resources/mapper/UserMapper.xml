@@ -26,7 +26,7 @@
 		from system.f4_ivn_hr_use us
 	</select>
 	
-	<!--<select id="getUserByRoleName" resultMap="userResultMap">
+	<select id="getUserByRoleName" resultMap="userResultMap">
 		select us.makh
 		     , us.tenkh
 		     , us.birthday
@@ -51,7 +51,7 @@
 		     , us.mail
 		     , us.roleid
 		from system.f4_ivn_hr_use us left join system.f4_ivn_hr_role r on us.roleid = r.roleid
-		where upper(r.rolename) = upper(#{rolename}) 
+		where upper(r.rolename) = upper(#{roleName}) 
 			   and r.isuser = 'N'
 	</select>
 	
@@ -66,8 +66,8 @@
 		     , us.mail
 		     , us.roleid
 		from system.f4_ivn_hr_use us
-		where upper(us.isuse) = upper(#{isuse})
-	</select>-->
+		where upper(us.isuse) = upper(#{isUse})
+	</select>
 
 </mapper>
 
