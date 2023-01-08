@@ -1,0 +1,30 @@
+design pattern->>>
+mô hình kiến trúc 3 lớp(three tier layer) ->>>
+
+mcv và 3 tier layer dùng cho trường hợp nào?
+
+services->>>
+
+công nghệ spring put->>>
+
+quan lý dự án:
+maven->>> quản lý qua các tab
+gradle->>>
+
+serilizable giúp ma hoá
+
+cấu hình thư viện:
+file pom->>>
+dependencies->>>
+
+|            My batic                   		|    	                   JPA                       		|
+|Maper: chứa các interface(tự đặc tả)   		|	RepoSitory: chứa các interface(được jpa định nghĩa)	|
+|dùng khi cần phải truy vấn nhiều database	|	dùng khi ít truy vấn database
+
+						++++++++++++++++++++++++++++++++++++++++++++++++
+sự khác nhau giữa SPA và MPA?
+SPA giúp giảm tải cho server khi giúp server giải quyết [...] và nhận JSON ->>> html.
+file:///C:/Users/vuqua/AppData/Local/ZaloPC/191006982088984613/ZaloDownloads/picture/309783105014260943_group/z3969413515031_c043ef2e2e7ae6b0b55f57793caa06ba.jpg
+
+thien
+

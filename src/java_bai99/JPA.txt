@@ -1,0 +1,33 @@
+JPA interface
+	-biết cách kết nối với database và không cần hiểu về database(tự động tìm cách kết nối).
+	-Xây dựng các đặc tả về truy vấn-thao tác đến database(đặc tả-hướng dẫn) 
+		->> giúp cho frameword biết cách thự thi tốt nhất
+
+
+2 frameword có imlement JPA interface hay sử dụng: hibernate || spring data JPA
+
+sự khác nhau giữa jdk and jre?
+java version 7....
+jdk version 1.8.....
+
+
+						++++++++++++++++++++++++++++++++++++++++++++
+
+->>Lên sử dụng kiểu Date của thư viện <<<< java.sql >>>> sẽ dễ dàng thao tác với database hơn
+->>Đối với khoá phụ lên đặt kiểu dữ liệu là class chứa khoá chính
+
+1-N: @OneToMany
+N-1: @ManyToOne
+1-1: @OneToOne
+N-N: @ManyToMany 
+
+Khoá phụ:	@ManyToOne
+		@JoinColumn(name = "column name", referencedColumnName = "tên của thuộc tính bên entity")
+		@JsonIgnoreProperties(value = { "applications", "hibernateLazyInitializer"})
+
+Khoá chính:	@Id
+		@Column(name = "column name")
+		@GeneratedValue(strategy = GenerationType.IDENTITY)
+
+
+						++++++++++++++++++++++++++++++++++++++++++++
