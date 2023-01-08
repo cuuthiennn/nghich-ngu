@@ -1,18 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="JavaOracleWebix.mapper.UserMapper">
+<mapper namespace="JavaOracleWebix.mapper.userMapper">
 	<resultMap id="userResultMap" type="JavaOracleWebix.entity.User">
-	
-		<result column="MAKH" property="maKhachHang" />
-		<result column="TENKH" property="tenKhachHang" />
-		<result column="DIACHI" property="diaChi" />
-
+		<result column="makh" property="maKhachHang" />
+		<result column="tenkh" property="tenKhachHang" />
+		<result column="birthday" property="birthday" />
+		<result column="diachi" property="diaChi" />
+		<result column="phone" property="phone" />
+		<result column="image" property="iMage" />
+		<result column="isuse" property="isUse" />
+		<result column="mail" property="mail" />
+		<result column = "roleid" property = "role_RoleId" />
 	</resultMap>
-
+ 	
 	<select id="getAllUser" resultMap="userResultMap">
-		select makh
-     		 , tenkh
-     		 , diachi
-		from system.f4_ivn_hr_use
+		select us.makh
+		     , us.tenkh
+		     , us.birthday
+		     , us.diachi
+		     , us.phone
+		     , us.image
+		     , us.isuse
+		     , us.mail
+		     , us.roleid
+		from system.f4_ivn_hr_use us
 	</select>
+	
+	<select id="getUserByRoleName" resultMap="userResultMap">
+		select us.makh
+		     , us.tenkh
+		     , us.birthday
+		     , us.diachi
+		     , us.phone
+		     , us.image
+		     , us.isuse
+		     , us.mail
+		     , us.roleid
+		from system.f4_ivn_hr_use us left join system.f4_ivn_hr_role r on us.roleid = r.roleid
+		where r.rolename = #{rolename}
+	</select>
+	
+	<select id="getUserByRoleNameN" resultMap="userResultMap">
+		select us.makh
+		     , us.tenkh
+		     , us.birthday
+		     , us.diachi
+		     , us.phone
+		     , us.image
+		     , us.isuse
+		     , us.mail
+		     , us.roleid
+		from system.f4_ivn_hr_use us left join system.f4_ivn_hr_role r on us.roleid = r.roleid
+		where upper(r.rolename) = upper(#{roleName}) 
+			   and r.isuser = 'N'
+	</select>
+	
+	<select id="getUserByIsUse" resultMap="userResultMap">
+		select us.makh
+		     , us.tenkh
+		     , us.birthday
+		     , us.diachi
+		     , us.phone
+		     , us.image
+		     , us.isuse
+		     , us.mail
+		     , us.roleid
+		from system.f4_ivn_hr_use us
+		where upper(us.isuse) = upper(#{isUse})
+	</select>
+
 </mapper>
+

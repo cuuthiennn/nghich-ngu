@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="JavaOracleWebix.mapper.RoleMapper">
+	<resultMap id="roleResultMap" type="JavaOracleWebix.entity.Role">
+	
+		<result column="roleid" property="roleId" />
+		<result column="rolename" property="roleName" />
+		<result column="isuser" property="isUser" />
+		<result column="image" property="iMage" />
+		<result column="description" property="description" />
+	</resultMap>
+
+	<select id="getAllRole" resultMap="roleResultMap">
+		select r.roleid
+		     , r.rolename
+		     , r.isuser
+		     , r.image
+		     , r.description
+		from system.f4_ivn_hr_role r
+	</select>
+</mapper>

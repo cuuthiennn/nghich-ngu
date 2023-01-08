@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace = "JavaSqlServerWebix.mapper.CTHDHMapper" >
+	<resultMap id="cthdhResultMap" type="JavaSqlServerWebix.entity.CTHDH">
+			<result column="ct.SOLUONG" property="soLuong" />
+			<result column="sp.MASP" property="maSp" />
+			<association property = "donHang" javaType = "DonDh">
+				<result property = "soDDH" column = "SoDDH"/>
+				<result property = "khachHAng" column = "MAKH"/>
+				<result property = "ngayDat" column = "NGAYDAT"/>
+			</association>
+	</resultMap>
+
+	<select id="getAllCthdhs" resultMap="cthdhResultMap">
+		select ct.SOLUONG
+			 , sp.MASP
+		from CTDDH ct left join SANPHAM sp on ct.MASP = sp.MASP
+	</select>
+</mapper>
